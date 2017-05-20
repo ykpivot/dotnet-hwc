@@ -29,10 +29,13 @@ namespace dotnet_hwc
 
             string rootPath = Path.GetPathRoot(options.AppRootPath);
             string uuid = Guid.NewGuid().ToString();
+            string userProfile = "";
 
+            // I don't think we actually need this, it should exist as you literally cannot
+            // do anything not as a user.
             try
             {
-                string userProfile = Environment.GetEnvironmentVariable("USERPROFILE");
+                userProfile = Environment.GetEnvironmentVariable("USERPROFILE");
                 if (userProfile == "")
                 {
                     throw new Exception();
@@ -43,6 +46,18 @@ namespace dotnet_hwc
                 Console.WriteLine("%USERPROFILE% is missing!");
                 Environment.Exit(1);
             }
+
+            string tempPath = Path.GetPathRoot(Path.Combine(userProfile, uuid, "tmp"));
+
+            try
+            {
+                Directory.CreateDirectory(tempPath);
+            } catch(IOException io)
+            {
+                Console.WriteLine("cannot create temp directory for {0}: {1}", options.AppRootPath, io);
+            }
+
+            // hwc new config logic
 
 
         }
