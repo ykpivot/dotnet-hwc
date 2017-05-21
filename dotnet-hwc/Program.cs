@@ -3,26 +3,19 @@ using System.Collections.Generic;
 using CommandLine;
 using System.IO;
 
-namespace dotnet_hwc
-{
-    class Program
-    {
+namespace dotnet_hwc {
+    class Program {
 
-        static void Main(string[] args)
-        {
+        static void Main(string[] args) {
             var options = new Options();
 
             // this feels weird and wrong, whatevs.
-            try
-            {
+            try {
                 var isValid = Parser.Default.ParseArgumentsStrict(args, options);
-                if (!isValid)
-                {
+                if (!isValid) {
                     throw new ParserException("bad args!");
                 }
-            }
-            catch (ParserException pe)
-            {
+            } catch (ParserException pe) {
                 Console.WriteLine("Error: {0}", pe);
                 Environment.Exit(1);
             }
@@ -33,38 +26,31 @@ namespace dotnet_hwc
 
             // I don't think we actually need this, it should exist as you literally cannot
             // do anything not as a user.
-            try
-            {
+            try {
                 userProfile = Environment.GetEnvironmentVariable("USERPROFILE");
-                if (userProfile == "")
-                {
+                if (userProfile == "") {
                     throw new Exception();
                 }
-            }
-            catch (Exception)
-            {
+            } catch (Exception) {
                 Console.WriteLine("%USERPROFILE% is missing!");
                 Environment.Exit(1);
             }
 
             string tempPath = Path.GetPathRoot(Path.Combine(userProfile, uuid, "tmp"));
 
-            try
-            {
+            try {
                 Directory.CreateDirectory(tempPath);
-            } catch(IOException io)
-            {
+            } catch (IOException io) {
                 Console.WriteLine("cannot create temp directory for {0}: {1}", options.AppRootPath, io);
             }
 
-            // hwc new config logic
+            // TODO: hwc new config logic
 
 
         }
     }
 
-    class Options
-    {
+    class Options {
         [Option("appRootPath", DefaultValue = ".", HelpText = "app web root path", Required = true)]
         public string AppRootPath { get; set; }
 

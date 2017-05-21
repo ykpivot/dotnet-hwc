@@ -4,8 +4,7 @@
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
 [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
-public partial class configuration
-{
+public partial class configuration {
 
     private configurationSectionGroup[] configSectionsField;
 
@@ -17,55 +16,43 @@ public partial class configuration
 
     /// <remarks/>
     [System.Xml.Serialization.XmlArrayItemAttribute("sectionGroup", IsNullable = false)]
-    public configurationSectionGroup[] configSections
-    {
-        get
-        {
+    public configurationSectionGroup[] configSections {
+        get {
             return this.configSectionsField;
         }
-        set
-        {
+        set {
             this.configSectionsField = value;
         }
     }
 
     /// <remarks/>
-    public configurationConfigProtectedData configProtectedData
-    {
-        get
-        {
+    public configurationConfigProtectedData configProtectedData {
+        get {
             return this.configProtectedDataField;
         }
-        set
-        {
+        set {
             this.configProtectedDataField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("system.applicationHost")]
-    public configurationSystemapplicationHost systemapplicationHost
-    {
-        get
-        {
+    public configurationSystemapplicationHost systemapplicationHost {
+        get {
             return this.systemapplicationHostField;
         }
-        set
-        {
+        set {
             this.systemapplicationHostField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("system.webServer")]
-    public configurationSystemwebServer[] systemwebServer
-    {
-        get
-        {
+    public configurationSystemwebServer[] systemwebServer {
+        get {
             return this.systemwebServerField;
         }
-        set
-        {
+        set {
             this.systemwebServerField = value;
         }
     }
@@ -75,8 +62,7 @@ public partial class configuration
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSectionGroup
-{
+public partial class configurationSectionGroup {
 
     private object[] itemsField;
 
@@ -85,28 +71,22 @@ public partial class configurationSectionGroup
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("section", typeof(configurationSectionGroupSection))]
     [System.Xml.Serialization.XmlElementAttribute("sectionGroup", typeof(configurationSectionGroupSectionGroup))]
-    public object[] Items
-    {
-        get
-        {
+    public object[] Items {
+        get {
             return this.itemsField;
         }
-        set
-        {
+        set {
             this.itemsField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string name
-    {
-        get
-        {
+    public string name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
@@ -116,8 +96,7 @@ public partial class configurationSectionGroup
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSectionGroupSection
-{
+public partial class configurationSectionGroupSection {
 
     private string nameField;
 
@@ -127,42 +106,33 @@ public partial class configurationSectionGroupSection
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string name
-    {
-        get
-        {
+    public string name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string allowDefinition
-    {
-        get
-        {
+    public string allowDefinition {
+        get {
             return this.allowDefinitionField;
         }
-        set
-        {
+        set {
             this.allowDefinitionField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string overrideModeDefault
-    {
-        get
-        {
+    public string overrideModeDefault {
+        get {
             return this.overrideModeDefaultField;
         }
-        set
-        {
+        set {
             this.overrideModeDefaultField = value;
         }
     }
@@ -172,8 +142,7 @@ public partial class configurationSectionGroupSection
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSectionGroupSectionGroup
-{
+public partial class configurationSectionGroupSectionGroup {
 
     private object[] itemsField;
 
@@ -182,28 +151,22 @@ public partial class configurationSectionGroupSectionGroup
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("section", typeof(configurationSectionGroupSectionGroupSection))]
     [System.Xml.Serialization.XmlElementAttribute("sectionGroup", typeof(configurationSectionGroupSectionGroupSectionGroup))]
-    public object[] Items
-    {
-        get
-        {
+    public object[] Items {
+        get {
             return this.itemsField;
         }
-        set
-        {
+        set {
             this.itemsField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string name
-    {
-        get
-        {
+    public string name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
@@ -213,8 +176,7 @@ public partial class configurationSectionGroupSectionGroup
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSectionGroupSectionGroupSection
-{
+public partial class configurationSectionGroupSectionGroupSection {
 
     private string nameField;
 
@@ -224,42 +186,33 @@ public partial class configurationSectionGroupSectionGroupSection
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string name
-    {
-        get
-        {
+    public string name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string overrideModeDefault
-    {
-        get
-        {
+    public string overrideModeDefault {
+        get {
             return this.overrideModeDefaultField;
         }
-        set
-        {
+        set {
             this.overrideModeDefaultField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string allowDefinition
-    {
-        get
-        {
+    public string allowDefinition {
+        get {
             return this.allowDefinitionField;
         }
-        set
-        {
+        set {
             this.allowDefinitionField = value;
         }
     }
@@ -269,8 +222,7 @@ public partial class configurationSectionGroupSectionGroupSection
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSectionGroupSectionGroupSectionGroup
-{
+public partial class configurationSectionGroupSectionGroupSectionGroup {
 
     private configurationSectionGroupSectionGroupSectionGroupSection[] sectionField;
 
@@ -278,28 +230,22 @@ public partial class configurationSectionGroupSectionGroupSectionGroup
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("section")]
-    public configurationSectionGroupSectionGroupSectionGroupSection[] section
-    {
-        get
-        {
+    public configurationSectionGroupSectionGroupSectionGroupSection[] section {
+        get {
             return this.sectionField;
         }
-        set
-        {
+        set {
             this.sectionField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string name
-    {
-        get
-        {
+    public string name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
@@ -309,8 +255,7 @@ public partial class configurationSectionGroupSectionGroupSectionGroup
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSectionGroupSectionGroupSectionGroupSection
-{
+public partial class configurationSectionGroupSectionGroupSectionGroupSection {
 
     private string nameField;
 
@@ -318,28 +263,22 @@ public partial class configurationSectionGroupSectionGroupSectionGroupSection
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string name
-    {
-        get
-        {
+    public string name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string overrideModeDefault
-    {
-        get
-        {
+    public string overrideModeDefault {
+        get {
             return this.overrideModeDefaultField;
         }
-        set
-        {
+        set {
             this.overrideModeDefaultField = value;
         }
     }
@@ -349,8 +288,7 @@ public partial class configurationSectionGroupSectionGroupSectionGroupSection
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationConfigProtectedData
-{
+public partial class configurationConfigProtectedData {
 
     private configurationConfigProtectedDataAdd[] providersField;
 
@@ -358,28 +296,22 @@ public partial class configurationConfigProtectedData
 
     /// <remarks/>
     [System.Xml.Serialization.XmlArrayItemAttribute("add", IsNullable = false)]
-    public configurationConfigProtectedDataAdd[] providers
-    {
-        get
-        {
+    public configurationConfigProtectedDataAdd[] providers {
+        get {
             return this.providersField;
         }
-        set
-        {
+        set {
             this.providersField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string defaultProvider
-    {
-        get
-        {
+    public string defaultProvider {
+        get {
             return this.defaultProviderField;
         }
-        set
-        {
+        set {
             this.defaultProviderField = value;
         }
     }
@@ -389,8 +321,7 @@ public partial class configurationConfigProtectedData
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationConfigProtectedDataAdd
-{
+public partial class configurationConfigProtectedDataAdd {
 
     private string nameField;
 
@@ -410,112 +341,88 @@ public partial class configurationConfigProtectedDataAdd
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string name
-    {
-        get
-        {
+    public string name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string type
-    {
-        get
-        {
+    public string type {
+        get {
             return this.typeField;
         }
-        set
-        {
+        set {
             this.typeField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string description
-    {
-        get
-        {
+    public string description {
+        get {
             return this.descriptionField;
         }
-        set
-        {
+        set {
             this.descriptionField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string keyContainerName
-    {
-        get
-        {
+    public string keyContainerName {
+        get {
             return this.keyContainerNameField;
         }
-        set
-        {
+        set {
             this.keyContainerNameField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string cspProviderName
-    {
-        get
-        {
+    public string cspProviderName {
+        get {
             return this.cspProviderNameField;
         }
-        set
-        {
+        set {
             this.cspProviderNameField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool useMachineContainer
-    {
-        get
-        {
+    public bool useMachineContainer {
+        get {
             return this.useMachineContainerField;
         }
-        set
-        {
+        set {
             this.useMachineContainerField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool useOAEP
-    {
-        get
-        {
+    public bool useOAEP {
+        get {
             return this.useOAEPField;
         }
-        set
-        {
+        set {
             this.useOAEPField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string sessionKey
-    {
-        get
-        {
+    public string sessionKey {
+        get {
             return this.sessionKeyField;
         }
-        set
-        {
+        set {
             this.sessionKeyField = value;
         }
     }
@@ -525,8 +432,7 @@ public partial class configurationConfigProtectedDataAdd
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemapplicationHost
-{
+public partial class configurationSystemapplicationHost {
 
     private configurationSystemapplicationHostApplicationPools applicationPoolsField;
 
@@ -537,53 +443,41 @@ public partial class configurationSystemapplicationHost
     private object webLimitsField;
 
     /// <remarks/>
-    public configurationSystemapplicationHostApplicationPools applicationPools
-    {
-        get
-        {
+    public configurationSystemapplicationHostApplicationPools applicationPools {
+        get {
             return this.applicationPoolsField;
         }
-        set
-        {
+        set {
             this.applicationPoolsField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemapplicationHostListenerAdapters listenerAdapters
-    {
-        get
-        {
+    public configurationSystemapplicationHostListenerAdapters listenerAdapters {
+        get {
             return this.listenerAdaptersField;
         }
-        set
-        {
+        set {
             this.listenerAdaptersField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemapplicationHostSites sites
-    {
-        get
-        {
+    public configurationSystemapplicationHostSites sites {
+        get {
             return this.sitesField;
         }
-        set
-        {
+        set {
             this.sitesField = value;
         }
     }
 
     /// <remarks/>
-    public object webLimits
-    {
-        get
-        {
+    public object webLimits {
+        get {
             return this.webLimitsField;
         }
-        set
-        {
+        set {
             this.webLimitsField = value;
         }
     }
@@ -593,20 +487,16 @@ public partial class configurationSystemapplicationHost
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemapplicationHostApplicationPools
-{
+public partial class configurationSystemapplicationHostApplicationPools {
 
     private configurationSystemapplicationHostApplicationPoolsAdd addField;
 
     /// <remarks/>
-    public configurationSystemapplicationHostApplicationPoolsAdd add
-    {
-        get
-        {
+    public configurationSystemapplicationHostApplicationPoolsAdd add {
+        get {
             return this.addField;
         }
-        set
-        {
+        set {
             this.addField = value;
         }
     }
@@ -616,8 +506,7 @@ public partial class configurationSystemapplicationHostApplicationPools
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemapplicationHostApplicationPoolsAdd
-{
+public partial class configurationSystemapplicationHostApplicationPoolsAdd {
 
     private string nameField;
 
@@ -633,84 +522,66 @@ public partial class configurationSystemapplicationHostApplicationPoolsAdd
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string name
-    {
-        get
-        {
+    public string name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string managedRuntimeVersion
-    {
-        get
-        {
+    public string managedRuntimeVersion {
+        get {
             return this.managedRuntimeVersionField;
         }
-        set
-        {
+        set {
             this.managedRuntimeVersionField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string managedPipelineMode
-    {
-        get
-        {
+    public string managedPipelineMode {
+        get {
             return this.managedPipelineModeField;
         }
-        set
-        {
+        set {
             this.managedPipelineModeField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string CLRConfigFile
-    {
-        get
-        {
+    public string CLRConfigFile {
+        get {
             return this.cLRConfigFileField;
         }
-        set
-        {
+        set {
             this.cLRConfigFileField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool autoStart
-    {
-        get
-        {
+    public bool autoStart {
+        get {
             return this.autoStartField;
         }
-        set
-        {
+        set {
             this.autoStartField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string startMode
-    {
-        get
-        {
+    public string startMode {
+        get {
             return this.startModeField;
         }
-        set
-        {
+        set {
             this.startModeField = value;
         }
     }
@@ -720,20 +591,16 @@ public partial class configurationSystemapplicationHostApplicationPoolsAdd
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemapplicationHostListenerAdapters
-{
+public partial class configurationSystemapplicationHostListenerAdapters {
 
     private configurationSystemapplicationHostListenerAdaptersAdd addField;
 
     /// <remarks/>
-    public configurationSystemapplicationHostListenerAdaptersAdd add
-    {
-        get
-        {
+    public configurationSystemapplicationHostListenerAdaptersAdd add {
+        get {
             return this.addField;
         }
-        set
-        {
+        set {
             this.addField = value;
         }
     }
@@ -743,21 +610,17 @@ public partial class configurationSystemapplicationHostListenerAdapters
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemapplicationHostListenerAdaptersAdd
-{
+public partial class configurationSystemapplicationHostListenerAdaptersAdd {
 
     private string nameField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string name
-    {
-        get
-        {
+    public string name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
@@ -767,8 +630,7 @@ public partial class configurationSystemapplicationHostListenerAdaptersAdd
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemapplicationHostSites
-{
+public partial class configurationSystemapplicationHostSites {
 
     private configurationSystemapplicationHostSitesSiteDefaults siteDefaultsField;
 
@@ -779,53 +641,41 @@ public partial class configurationSystemapplicationHostSites
     private configurationSystemapplicationHostSitesSite siteField;
 
     /// <remarks/>
-    public configurationSystemapplicationHostSitesSiteDefaults siteDefaults
-    {
-        get
-        {
+    public configurationSystemapplicationHostSitesSiteDefaults siteDefaults {
+        get {
             return this.siteDefaultsField;
         }
-        set
-        {
+        set {
             this.siteDefaultsField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemapplicationHostSitesApplicationDefaults applicationDefaults
-    {
-        get
-        {
+    public configurationSystemapplicationHostSitesApplicationDefaults applicationDefaults {
+        get {
             return this.applicationDefaultsField;
         }
-        set
-        {
+        set {
             this.applicationDefaultsField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemapplicationHostSitesVirtualDirectoryDefaults virtualDirectoryDefaults
-    {
-        get
-        {
+    public configurationSystemapplicationHostSitesVirtualDirectoryDefaults virtualDirectoryDefaults {
+        get {
             return this.virtualDirectoryDefaultsField;
         }
-        set
-        {
+        set {
             this.virtualDirectoryDefaultsField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemapplicationHostSitesSite site
-    {
-        get
-        {
+    public configurationSystemapplicationHostSitesSite site {
+        get {
             return this.siteField;
         }
-        set
-        {
+        set {
             this.siteField = value;
         }
     }
@@ -835,35 +685,28 @@ public partial class configurationSystemapplicationHostSites
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemapplicationHostSitesSiteDefaults
-{
+public partial class configurationSystemapplicationHostSitesSiteDefaults {
 
     private configurationSystemapplicationHostSitesSiteDefaultsLogFile logFileField;
 
     private configurationSystemapplicationHostSitesSiteDefaultsTraceFailedRequestsLogging traceFailedRequestsLoggingField;
 
     /// <remarks/>
-    public configurationSystemapplicationHostSitesSiteDefaultsLogFile logFile
-    {
-        get
-        {
+    public configurationSystemapplicationHostSitesSiteDefaultsLogFile logFile {
+        get {
             return this.logFileField;
         }
-        set
-        {
+        set {
             this.logFileField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemapplicationHostSitesSiteDefaultsTraceFailedRequestsLogging traceFailedRequestsLogging
-    {
-        get
-        {
+    public configurationSystemapplicationHostSitesSiteDefaultsTraceFailedRequestsLogging traceFailedRequestsLogging {
+        get {
             return this.traceFailedRequestsLoggingField;
         }
-        set
-        {
+        set {
             this.traceFailedRequestsLoggingField = value;
         }
     }
@@ -873,8 +716,7 @@ public partial class configurationSystemapplicationHostSitesSiteDefaults
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemapplicationHostSitesSiteDefaultsLogFile
-{
+public partial class configurationSystemapplicationHostSitesSiteDefaultsLogFile {
 
     private string logFormatField;
 
@@ -882,28 +724,22 @@ public partial class configurationSystemapplicationHostSitesSiteDefaultsLogFile
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string logFormat
-    {
-        get
-        {
+    public string logFormat {
+        get {
             return this.logFormatField;
         }
-        set
-        {
+        set {
             this.logFormatField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string directory
-    {
-        get
-        {
+    public string directory {
+        get {
             return this.directoryField;
         }
-        set
-        {
+        set {
             this.directoryField = value;
         }
     }
@@ -913,21 +749,17 @@ public partial class configurationSystemapplicationHostSitesSiteDefaultsLogFile
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemapplicationHostSitesSiteDefaultsTraceFailedRequestsLogging
-{
+public partial class configurationSystemapplicationHostSitesSiteDefaultsTraceFailedRequestsLogging {
 
     private bool enabledField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool enabled
-    {
-        get
-        {
+    public bool enabled {
+        get {
             return this.enabledField;
         }
-        set
-        {
+        set {
             this.enabledField = value;
         }
     }
@@ -937,21 +769,17 @@ public partial class configurationSystemapplicationHostSitesSiteDefaultsTraceFai
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemapplicationHostSitesApplicationDefaults
-{
+public partial class configurationSystemapplicationHostSitesApplicationDefaults {
 
     private string applicationPoolField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string applicationPool
-    {
-        get
-        {
+    public string applicationPool {
+        get {
             return this.applicationPoolField;
         }
-        set
-        {
+        set {
             this.applicationPoolField = value;
         }
     }
@@ -961,21 +789,17 @@ public partial class configurationSystemapplicationHostSitesApplicationDefaults
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemapplicationHostSitesVirtualDirectoryDefaults
-{
+public partial class configurationSystemapplicationHostSitesVirtualDirectoryDefaults {
 
     private bool allowSubDirConfigField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool allowSubDirConfig
-    {
-        get
-        {
+    public bool allowSubDirConfig {
+        get {
             return this.allowSubDirConfigField;
         }
-        set
-        {
+        set {
             this.allowSubDirConfigField = value;
         }
     }
@@ -985,8 +809,7 @@ public partial class configurationSystemapplicationHostSitesVirtualDirectoryDefa
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemapplicationHostSitesSite
-{
+public partial class configurationSystemapplicationHostSitesSite {
 
     private configurationSystemapplicationHostSitesSiteApplication applicationField;
 
@@ -999,69 +822,54 @@ public partial class configurationSystemapplicationHostSitesSite
     private bool serverAutoStartField;
 
     /// <remarks/>
-    public configurationSystemapplicationHostSitesSiteApplication application
-    {
-        get
-        {
+    public configurationSystemapplicationHostSitesSiteApplication application {
+        get {
             return this.applicationField;
         }
-        set
-        {
+        set {
             this.applicationField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemapplicationHostSitesSiteBindings bindings
-    {
-        get
-        {
+    public configurationSystemapplicationHostSitesSiteBindings bindings {
+        get {
             return this.bindingsField;
         }
-        set
-        {
+        set {
             this.bindingsField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string name
-    {
-        get
-        {
+    public string name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public byte id
-    {
-        get
-        {
+    public byte id {
+        get {
             return this.idField;
         }
-        set
-        {
+        set {
             this.idField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool serverAutoStart
-    {
-        get
-        {
+    public bool serverAutoStart {
+        get {
             return this.serverAutoStartField;
         }
-        set
-        {
+        set {
             this.serverAutoStartField = value;
         }
     }
@@ -1071,8 +879,7 @@ public partial class configurationSystemapplicationHostSitesSite
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemapplicationHostSitesSiteApplication
-{
+public partial class configurationSystemapplicationHostSitesSiteApplication {
 
     private configurationSystemapplicationHostSitesSiteApplicationVirtualDirectory virtualDirectoryField;
 
@@ -1081,42 +888,33 @@ public partial class configurationSystemapplicationHostSitesSiteApplication
     private string applicationPoolField;
 
     /// <remarks/>
-    public configurationSystemapplicationHostSitesSiteApplicationVirtualDirectory virtualDirectory
-    {
-        get
-        {
+    public configurationSystemapplicationHostSitesSiteApplicationVirtualDirectory virtualDirectory {
+        get {
             return this.virtualDirectoryField;
         }
-        set
-        {
+        set {
             this.virtualDirectoryField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string path
-    {
-        get
-        {
+    public string path {
+        get {
             return this.pathField;
         }
-        set
-        {
+        set {
             this.pathField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string applicationPool
-    {
-        get
-        {
+    public string applicationPool {
+        get {
             return this.applicationPoolField;
         }
-        set
-        {
+        set {
             this.applicationPoolField = value;
         }
     }
@@ -1126,8 +924,7 @@ public partial class configurationSystemapplicationHostSitesSiteApplication
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemapplicationHostSitesSiteApplicationVirtualDirectory
-{
+public partial class configurationSystemapplicationHostSitesSiteApplicationVirtualDirectory {
 
     private string pathField;
 
@@ -1135,28 +932,22 @@ public partial class configurationSystemapplicationHostSitesSiteApplicationVirtu
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string path
-    {
-        get
-        {
+    public string path {
+        get {
             return this.pathField;
         }
-        set
-        {
+        set {
             this.pathField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string physicalPath
-    {
-        get
-        {
+    public string physicalPath {
+        get {
             return this.physicalPathField;
         }
-        set
-        {
+        set {
             this.physicalPathField = value;
         }
     }
@@ -1166,20 +957,16 @@ public partial class configurationSystemapplicationHostSitesSiteApplicationVirtu
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemapplicationHostSitesSiteBindings
-{
+public partial class configurationSystemapplicationHostSitesSiteBindings {
 
     private configurationSystemapplicationHostSitesSiteBindingsBinding bindingField;
 
     /// <remarks/>
-    public configurationSystemapplicationHostSitesSiteBindingsBinding binding
-    {
-        get
-        {
+    public configurationSystemapplicationHostSitesSiteBindingsBinding binding {
+        get {
             return this.bindingField;
         }
-        set
-        {
+        set {
             this.bindingField = value;
         }
     }
@@ -1189,8 +976,7 @@ public partial class configurationSystemapplicationHostSitesSiteBindings
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemapplicationHostSitesSiteBindingsBinding
-{
+public partial class configurationSystemapplicationHostSitesSiteBindingsBinding {
 
     private string protocolField;
 
@@ -1198,28 +984,22 @@ public partial class configurationSystemapplicationHostSitesSiteBindingsBinding
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string protocol
-    {
-        get
-        {
+    public string protocol {
+        get {
             return this.protocolField;
         }
-        set
-        {
+        set {
             this.protocolField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string bindingInformation
-    {
-        get
-        {
+    public string bindingInformation {
+        get {
             return this.bindingInformationField;
         }
-        set
-        {
+        set {
             this.bindingInformationField = value;
         }
     }
@@ -1229,8 +1009,7 @@ public partial class configurationSystemapplicationHostSitesSiteBindingsBinding
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServer
-{
+public partial class configurationSystemwebServer {
 
     private configurationSystemwebServerAdd[] modulesField;
 
@@ -1282,314 +1061,242 @@ public partial class configurationSystemwebServer
 
     /// <remarks/>
     [System.Xml.Serialization.XmlArrayItemAttribute("add", IsNullable = false)]
-    public configurationSystemwebServerAdd[] modules
-    {
-        get
-        {
+    public configurationSystemwebServerAdd[] modules {
+        get {
             return this.modulesField;
         }
-        set
-        {
+        set {
             this.modulesField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerHandlers handlers
-    {
-        get
-        {
+    public configurationSystemwebServerHandlers handlers {
+        get {
             return this.handlersField;
         }
-        set
-        {
+        set {
             this.handlersField = value;
         }
     }
 
     /// <remarks/>
-    public object asp
-    {
-        get
-        {
+    public object asp {
+        get {
             return this.aspField;
         }
-        set
-        {
+        set {
             this.aspField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerCaching caching
-    {
-        get
-        {
+    public configurationSystemwebServerCaching caching {
+        get {
             return this.cachingField;
         }
-        set
-        {
+        set {
             this.cachingField = value;
         }
     }
 
     /// <remarks/>
-    public object cgi
-    {
-        get
-        {
+    public object cgi {
+        get {
             return this.cgiField;
         }
-        set
-        {
+        set {
             this.cgiField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerDefaultDocument defaultDocument
-    {
-        get
-        {
+    public configurationSystemwebServerDefaultDocument defaultDocument {
+        get {
             return this.defaultDocumentField;
         }
-        set
-        {
+        set {
             this.defaultDocumentField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerDirectoryBrowse directoryBrowse
-    {
-        get
-        {
+    public configurationSystemwebServerDirectoryBrowse directoryBrowse {
+        get {
             return this.directoryBrowseField;
         }
-        set
-        {
+        set {
             this.directoryBrowseField = value;
         }
     }
 
     /// <remarks/>
-    public object fastCgi
-    {
-        get
-        {
+    public object fastCgi {
+        get {
             return this.fastCgiField;
         }
-        set
-        {
+        set {
             this.fastCgiField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerGlobalModules globalModules
-    {
-        get
-        {
+    public configurationSystemwebServerGlobalModules globalModules {
+        get {
             return this.globalModulesField;
         }
-        set
-        {
+        set {
             this.globalModulesField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerHttpCompression httpCompression
-    {
-        get
-        {
+    public configurationSystemwebServerHttpCompression httpCompression {
+        get {
             return this.httpCompressionField;
         }
-        set
-        {
+        set {
             this.httpCompressionField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerHttpErrors httpErrors
-    {
-        get
-        {
+    public configurationSystemwebServerHttpErrors httpErrors {
+        get {
             return this.httpErrorsField;
         }
-        set
-        {
+        set {
             this.httpErrorsField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerHttpLogging httpLogging
-    {
-        get
-        {
+    public configurationSystemwebServerHttpLogging httpLogging {
+        get {
             return this.httpLoggingField;
         }
-        set
-        {
+        set {
             this.httpLoggingField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerHttpProtocol httpProtocol
-    {
-        get
-        {
+    public configurationSystemwebServerHttpProtocol httpProtocol {
+        get {
             return this.httpProtocolField;
         }
-        set
-        {
+        set {
             this.httpProtocolField = value;
         }
     }
 
     /// <remarks/>
-    public object httpRedirect
-    {
-        get
-        {
+    public object httpRedirect {
+        get {
             return this.httpRedirectField;
         }
-        set
-        {
+        set {
             this.httpRedirectField = value;
         }
     }
 
     /// <remarks/>
-    public object httpTracing
-    {
-        get
-        {
+    public object httpTracing {
+        get {
             return this.httpTracingField;
         }
-        set
-        {
+        set {
             this.httpTracingField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlArrayItemAttribute("filter", IsNullable = false)]
-    public configurationSystemwebServerFilter[] isapiFilters
-    {
-        get
-        {
+    public configurationSystemwebServerFilter[] isapiFilters {
+        get {
             return this.isapiFiltersField;
         }
-        set
-        {
+        set {
             this.isapiFiltersField = value;
         }
     }
 
     /// <remarks/>
-    public object odbcLogging
-    {
-        get
-        {
+    public object odbcLogging {
+        get {
             return this.odbcLoggingField;
         }
-        set
-        {
+        set {
             this.odbcLoggingField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerSecurity security
-    {
-        get
-        {
+    public configurationSystemwebServerSecurity security {
+        get {
             return this.securityField;
         }
-        set
-        {
+        set {
             this.securityField = value;
         }
     }
 
     /// <remarks/>
-    public object serverRuntime
-    {
-        get
-        {
+    public object serverRuntime {
+        get {
             return this.serverRuntimeField;
         }
-        set
-        {
+        set {
             this.serverRuntimeField = value;
         }
     }
 
     /// <remarks/>
-    public object serverSideInclude
-    {
-        get
-        {
+    public object serverSideInclude {
+        get {
             return this.serverSideIncludeField;
         }
-        set
-        {
+        set {
             this.serverSideIncludeField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerStaticContent staticContent
-    {
-        get
-        {
+    public configurationSystemwebServerStaticContent staticContent {
+        get {
             return this.staticContentField;
         }
-        set
-        {
+        set {
             this.staticContentField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerTracing tracing
-    {
-        get
-        {
+    public configurationSystemwebServerTracing tracing {
+        get {
             return this.tracingField;
         }
-        set
-        {
+        set {
             this.tracingField = value;
         }
     }
 
     /// <remarks/>
-    public object urlCompression
-    {
-        get
-        {
+    public object urlCompression {
+        get {
             return this.urlCompressionField;
         }
-        set
-        {
+        set {
             this.urlCompressionField = value;
         }
     }
 
     /// <remarks/>
-    public object validation
-    {
-        get
-        {
+    public object validation {
+        get {
             return this.validationField;
         }
-        set
-        {
+        set {
             this.validationField = value;
         }
     }
@@ -1599,8 +1306,7 @@ public partial class configurationSystemwebServer
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerAdd
-{
+public partial class configurationSystemwebServerAdd {
 
     private string nameField;
 
@@ -1614,70 +1320,55 @@ public partial class configurationSystemwebServerAdd
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string name
-    {
-        get
-        {
+    public string name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool lockItem
-    {
-        get
-        {
+    public bool lockItem {
+        get {
             return this.lockItemField;
         }
-        set
-        {
+        set {
             this.lockItemField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool lockItemSpecified
-    {
-        get
-        {
+    public bool lockItemSpecified {
+        get {
             return this.lockItemFieldSpecified;
         }
-        set
-        {
+        set {
             this.lockItemFieldSpecified = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string type
-    {
-        get
-        {
+    public string type {
+        get {
             return this.typeField;
         }
-        set
-        {
+        set {
             this.typeField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string preCondition
-    {
-        get
-        {
+    public string preCondition {
+        get {
             return this.preConditionField;
         }
-        set
-        {
+        set {
             this.preConditionField = value;
         }
     }
@@ -1687,8 +1378,7 @@ public partial class configurationSystemwebServerAdd
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerHandlers
-{
+public partial class configurationSystemwebServerHandlers {
 
     private configurationSystemwebServerHandlersAdd[] addField;
 
@@ -1696,28 +1386,22 @@ public partial class configurationSystemwebServerHandlers
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("add")]
-    public configurationSystemwebServerHandlersAdd[] add
-    {
-        get
-        {
+    public configurationSystemwebServerHandlersAdd[] add {
+        get {
             return this.addField;
         }
-        set
-        {
+        set {
             this.addField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string accessPolicy
-    {
-        get
-        {
+    public string accessPolicy {
+        get {
             return this.accessPolicyField;
         }
-        set
-        {
+        set {
             this.accessPolicyField = value;
         }
     }
@@ -1727,8 +1411,7 @@ public partial class configurationSystemwebServerHandlers
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerHandlersAdd
-{
+public partial class configurationSystemwebServerHandlersAdd {
 
     private string nameField;
 
@@ -1758,182 +1441,143 @@ public partial class configurationSystemwebServerHandlersAdd
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string name
-    {
-        get
-        {
+    public string name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string path
-    {
-        get
-        {
+    public string path {
+        get {
             return this.pathField;
         }
-        set
-        {
+        set {
             this.pathField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string verb
-    {
-        get
-        {
+    public string verb {
+        get {
             return this.verbField;
         }
-        set
-        {
+        set {
             this.verbField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string modules
-    {
-        get
-        {
+    public string modules {
+        get {
             return this.modulesField;
         }
-        set
-        {
+        set {
             this.modulesField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string scriptProcessor
-    {
-        get
-        {
+    public string scriptProcessor {
+        get {
             return this.scriptProcessorField;
         }
-        set
-        {
+        set {
             this.scriptProcessorField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string resourceType
-    {
-        get
-        {
+    public string resourceType {
+        get {
             return this.resourceTypeField;
         }
-        set
-        {
+        set {
             this.resourceTypeField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string requireAccess
-    {
-        get
-        {
+    public string requireAccess {
+        get {
             return this.requireAccessField;
         }
-        set
-        {
+        set {
             this.requireAccessField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool allowPathInfo
-    {
-        get
-        {
+    public bool allowPathInfo {
+        get {
             return this.allowPathInfoField;
         }
-        set
-        {
+        set {
             this.allowPathInfoField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool allowPathInfoSpecified
-    {
-        get
-        {
+    public bool allowPathInfoSpecified {
+        get {
             return this.allowPathInfoFieldSpecified;
         }
-        set
-        {
+        set {
             this.allowPathInfoFieldSpecified = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string preCondition
-    {
-        get
-        {
+    public string preCondition {
+        get {
             return this.preConditionField;
         }
-        set
-        {
+        set {
             this.preConditionField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public byte responseBufferLimit
-    {
-        get
-        {
+    public byte responseBufferLimit {
+        get {
             return this.responseBufferLimitField;
         }
-        set
-        {
+        set {
             this.responseBufferLimitField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool responseBufferLimitSpecified
-    {
-        get
-        {
+    public bool responseBufferLimitSpecified {
+        get {
             return this.responseBufferLimitFieldSpecified;
         }
-        set
-        {
+        set {
             this.responseBufferLimitFieldSpecified = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string type
-    {
-        get
-        {
+    public string type {
+        get {
             return this.typeField;
         }
-        set
-        {
+        set {
             this.typeField = value;
         }
     }
@@ -1943,8 +1587,7 @@ public partial class configurationSystemwebServerHandlersAdd
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerCaching
-{
+public partial class configurationSystemwebServerCaching {
 
     private bool enabledField;
 
@@ -1952,28 +1595,22 @@ public partial class configurationSystemwebServerCaching
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool enabled
-    {
-        get
-        {
+    public bool enabled {
+        get {
             return this.enabledField;
         }
-        set
-        {
+        set {
             this.enabledField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool enableKernelCache
-    {
-        get
-        {
+    public bool enableKernelCache {
+        get {
             return this.enableKernelCacheField;
         }
-        set
-        {
+        set {
             this.enableKernelCacheField = value;
         }
     }
@@ -1983,8 +1620,7 @@ public partial class configurationSystemwebServerCaching
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerDefaultDocument
-{
+public partial class configurationSystemwebServerDefaultDocument {
 
     private configurationSystemwebServerDefaultDocumentAdd[] filesField;
 
@@ -1992,28 +1628,22 @@ public partial class configurationSystemwebServerDefaultDocument
 
     /// <remarks/>
     [System.Xml.Serialization.XmlArrayItemAttribute("add", IsNullable = false)]
-    public configurationSystemwebServerDefaultDocumentAdd[] files
-    {
-        get
-        {
+    public configurationSystemwebServerDefaultDocumentAdd[] files {
+        get {
             return this.filesField;
         }
-        set
-        {
+        set {
             this.filesField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool enabled
-    {
-        get
-        {
+    public bool enabled {
+        get {
             return this.enabledField;
         }
-        set
-        {
+        set {
             this.enabledField = value;
         }
     }
@@ -2023,21 +1653,17 @@ public partial class configurationSystemwebServerDefaultDocument
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerDefaultDocumentAdd
-{
+public partial class configurationSystemwebServerDefaultDocumentAdd {
 
     private string valueField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string value
-    {
-        get
-        {
+    public string value {
+        get {
             return this.valueField;
         }
-        set
-        {
+        set {
             this.valueField = value;
         }
     }
@@ -2047,21 +1673,17 @@ public partial class configurationSystemwebServerDefaultDocumentAdd
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerDirectoryBrowse
-{
+public partial class configurationSystemwebServerDirectoryBrowse {
 
     private bool enabledField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool enabled
-    {
-        get
-        {
+    public bool enabled {
+        get {
             return this.enabledField;
         }
-        set
-        {
+        set {
             this.enabledField = value;
         }
     }
@@ -2071,20 +1693,16 @@ public partial class configurationSystemwebServerDirectoryBrowse
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerGlobalModules
-{
+public partial class configurationSystemwebServerGlobalModules {
 
     private configurationSystemwebServerGlobalModulesAdd addField;
 
     /// <remarks/>
-    public configurationSystemwebServerGlobalModulesAdd add
-    {
-        get
-        {
+    public configurationSystemwebServerGlobalModulesAdd add {
+        get {
             return this.addField;
         }
-        set
-        {
+        set {
             this.addField = value;
         }
     }
@@ -2094,21 +1712,17 @@ public partial class configurationSystemwebServerGlobalModules
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerGlobalModulesAdd
-{
+public partial class configurationSystemwebServerGlobalModulesAdd {
 
     private string nameField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string name
-    {
-        get
-        {
+    public string name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
@@ -2118,8 +1732,7 @@ public partial class configurationSystemwebServerGlobalModulesAdd
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerHttpCompression
-{
+public partial class configurationSystemwebServerHttpCompression {
 
     private configurationSystemwebServerHttpCompressionScheme schemeField;
 
@@ -2130,56 +1743,44 @@ public partial class configurationSystemwebServerHttpCompression
     private string directoryField;
 
     /// <remarks/>
-    public configurationSystemwebServerHttpCompressionScheme scheme
-    {
-        get
-        {
+    public configurationSystemwebServerHttpCompressionScheme scheme {
+        get {
             return this.schemeField;
         }
-        set
-        {
+        set {
             this.schemeField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlArrayItemAttribute("add", IsNullable = false)]
-    public configurationSystemwebServerHttpCompressionAdd[] staticTypes
-    {
-        get
-        {
+    public configurationSystemwebServerHttpCompressionAdd[] staticTypes {
+        get {
             return this.staticTypesField;
         }
-        set
-        {
+        set {
             this.staticTypesField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlArrayItemAttribute("add", IsNullable = false)]
-    public configurationSystemwebServerHttpCompressionAdd1[] dynamicTypes
-    {
-        get
-        {
+    public configurationSystemwebServerHttpCompressionAdd1[] dynamicTypes {
+        get {
             return this.dynamicTypesField;
         }
-        set
-        {
+        set {
             this.dynamicTypesField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string directory
-    {
-        get
-        {
+    public string directory {
+        get {
             return this.directoryField;
         }
-        set
-        {
+        set {
             this.directoryField = value;
         }
     }
@@ -2189,8 +1790,7 @@ public partial class configurationSystemwebServerHttpCompression
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerHttpCompressionScheme
-{
+public partial class configurationSystemwebServerHttpCompressionScheme {
 
     private string nameField;
 
@@ -2198,28 +1798,22 @@ public partial class configurationSystemwebServerHttpCompressionScheme
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string name
-    {
-        get
-        {
+    public string name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string dll
-    {
-        get
-        {
+    public string dll {
+        get {
             return this.dllField;
         }
-        set
-        {
+        set {
             this.dllField = value;
         }
     }
@@ -2229,8 +1823,7 @@ public partial class configurationSystemwebServerHttpCompressionScheme
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerHttpCompressionAdd
-{
+public partial class configurationSystemwebServerHttpCompressionAdd {
 
     private string mimeTypeField;
 
@@ -2238,28 +1831,22 @@ public partial class configurationSystemwebServerHttpCompressionAdd
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string mimeType
-    {
-        get
-        {
+    public string mimeType {
+        get {
             return this.mimeTypeField;
         }
-        set
-        {
+        set {
             this.mimeTypeField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool enabled
-    {
-        get
-        {
+    public bool enabled {
+        get {
             return this.enabledField;
         }
-        set
-        {
+        set {
             this.enabledField = value;
         }
     }
@@ -2269,8 +1856,7 @@ public partial class configurationSystemwebServerHttpCompressionAdd
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerHttpCompressionAdd1
-{
+public partial class configurationSystemwebServerHttpCompressionAdd1 {
 
     private string mimeTypeField;
 
@@ -2278,28 +1864,22 @@ public partial class configurationSystemwebServerHttpCompressionAdd1
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string mimeType
-    {
-        get
-        {
+    public string mimeType {
+        get {
             return this.mimeTypeField;
         }
-        set
-        {
+        set {
             this.mimeTypeField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool enabled
-    {
-        get
-        {
+    public bool enabled {
+        get {
             return this.enabledField;
         }
-        set
-        {
+        set {
             this.enabledField = value;
         }
     }
@@ -2309,8 +1889,7 @@ public partial class configurationSystemwebServerHttpCompressionAdd1
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerHttpErrors
-{
+public partial class configurationSystemwebServerHttpErrors {
 
     private configurationSystemwebServerHttpErrorsError[] errorField;
 
@@ -2318,28 +1897,22 @@ public partial class configurationSystemwebServerHttpErrors
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("error")]
-    public configurationSystemwebServerHttpErrorsError[] error
-    {
-        get
-        {
+    public configurationSystemwebServerHttpErrorsError[] error {
+        get {
             return this.errorField;
         }
-        set
-        {
+        set {
             this.errorField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string lockAttributes
-    {
-        get
-        {
+    public string lockAttributes {
+        get {
             return this.lockAttributesField;
         }
-        set
-        {
+        set {
             this.lockAttributesField = value;
         }
     }
@@ -2349,8 +1922,7 @@ public partial class configurationSystemwebServerHttpErrors
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerHttpErrorsError
-{
+public partial class configurationSystemwebServerHttpErrorsError {
 
     private ushort statusCodeField;
 
@@ -2360,42 +1932,33 @@ public partial class configurationSystemwebServerHttpErrorsError
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public ushort statusCode
-    {
-        get
-        {
+    public ushort statusCode {
+        get {
             return this.statusCodeField;
         }
-        set
-        {
+        set {
             this.statusCodeField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string prefixLanguageFilePath
-    {
-        get
-        {
+    public string prefixLanguageFilePath {
+        get {
             return this.prefixLanguageFilePathField;
         }
-        set
-        {
+        set {
             this.prefixLanguageFilePathField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string path
-    {
-        get
-        {
+    public string path {
+        get {
             return this.pathField;
         }
-        set
-        {
+        set {
             this.pathField = value;
         }
     }
@@ -2405,21 +1968,17 @@ public partial class configurationSystemwebServerHttpErrorsError
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerHttpLogging
-{
+public partial class configurationSystemwebServerHttpLogging {
 
     private bool dontLogField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool dontLog
-    {
-        get
-        {
+    public bool dontLog {
+        get {
             return this.dontLogField;
         }
-        set
-        {
+        set {
             this.dontLogField = value;
         }
     }
@@ -2429,35 +1988,28 @@ public partial class configurationSystemwebServerHttpLogging
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerHttpProtocol
-{
+public partial class configurationSystemwebServerHttpProtocol {
 
     private configurationSystemwebServerHttpProtocolCustomHeaders customHeadersField;
 
     private configurationSystemwebServerHttpProtocolRedirectHeaders redirectHeadersField;
 
     /// <remarks/>
-    public configurationSystemwebServerHttpProtocolCustomHeaders customHeaders
-    {
-        get
-        {
+    public configurationSystemwebServerHttpProtocolCustomHeaders customHeaders {
+        get {
             return this.customHeadersField;
         }
-        set
-        {
+        set {
             this.customHeadersField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerHttpProtocolRedirectHeaders redirectHeaders
-    {
-        get
-        {
+    public configurationSystemwebServerHttpProtocolRedirectHeaders redirectHeaders {
+        get {
             return this.redirectHeadersField;
         }
-        set
-        {
+        set {
             this.redirectHeadersField = value;
         }
     }
@@ -2467,20 +2019,16 @@ public partial class configurationSystemwebServerHttpProtocol
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerHttpProtocolCustomHeaders
-{
+public partial class configurationSystemwebServerHttpProtocolCustomHeaders {
 
     private object clearField;
 
     /// <remarks/>
-    public object clear
-    {
-        get
-        {
+    public object clear {
+        get {
             return this.clearField;
         }
-        set
-        {
+        set {
             this.clearField = value;
         }
     }
@@ -2490,20 +2038,16 @@ public partial class configurationSystemwebServerHttpProtocolCustomHeaders
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerHttpProtocolRedirectHeaders
-{
+public partial class configurationSystemwebServerHttpProtocolRedirectHeaders {
 
     private object clearField;
 
     /// <remarks/>
-    public object clear
-    {
-        get
-        {
+    public object clear {
+        get {
             return this.clearField;
         }
-        set
-        {
+        set {
             this.clearField = value;
         }
     }
@@ -2513,8 +2057,7 @@ public partial class configurationSystemwebServerHttpProtocolRedirectHeaders
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerFilter
-{
+public partial class configurationSystemwebServerFilter {
 
     private string nameField;
 
@@ -2526,56 +2069,44 @@ public partial class configurationSystemwebServerFilter
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string name
-    {
-        get
-        {
+    public string name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string path
-    {
-        get
-        {
+    public string path {
+        get {
             return this.pathField;
         }
-        set
-        {
+        set {
             this.pathField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool enableCache
-    {
-        get
-        {
+    public bool enableCache {
+        get {
             return this.enableCacheField;
         }
-        set
-        {
+        set {
             this.enableCacheField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string preCondition
-    {
-        get
-        {
+    public string preCondition {
+        get {
             return this.preConditionField;
         }
-        set
-        {
+        set {
             this.preConditionField = value;
         }
     }
@@ -2585,8 +2116,7 @@ public partial class configurationSystemwebServerFilter
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerSecurity
-{
+public partial class configurationSystemwebServerSecurity {
 
     private configurationSystemwebServerSecurityAccess accessField;
 
@@ -2603,93 +2133,72 @@ public partial class configurationSystemwebServerSecurity
     private configurationSystemwebServerSecurityRequestFiltering requestFilteringField;
 
     /// <remarks/>
-    public configurationSystemwebServerSecurityAccess access
-    {
-        get
-        {
+    public configurationSystemwebServerSecurityAccess access {
+        get {
             return this.accessField;
         }
-        set
-        {
+        set {
             this.accessField = value;
         }
     }
 
     /// <remarks/>
-    public object applicationDependencies
-    {
-        get
-        {
+    public object applicationDependencies {
+        get {
             return this.applicationDependenciesField;
         }
-        set
-        {
+        set {
             this.applicationDependenciesField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerSecurityAuthentication authentication
-    {
-        get
-        {
+    public configurationSystemwebServerSecurityAuthentication authentication {
+        get {
             return this.authenticationField;
         }
-        set
-        {
+        set {
             this.authenticationField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerSecurityAuthorization authorization
-    {
-        get
-        {
+    public configurationSystemwebServerSecurityAuthorization authorization {
+        get {
             return this.authorizationField;
         }
-        set
-        {
+        set {
             this.authorizationField = value;
         }
     }
 
     /// <remarks/>
-    public object ipSecurity
-    {
-        get
-        {
+    public object ipSecurity {
+        get {
             return this.ipSecurityField;
         }
-        set
-        {
+        set {
             this.ipSecurityField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlArrayItemAttribute("add", IsNullable = false)]
-    public configurationSystemwebServerSecurityAdd[] isapiCgiRestriction
-    {
-        get
-        {
+    public configurationSystemwebServerSecurityAdd[] isapiCgiRestriction {
+        get {
             return this.isapiCgiRestrictionField;
         }
-        set
-        {
+        set {
             this.isapiCgiRestrictionField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerSecurityRequestFiltering requestFiltering
-    {
-        get
-        {
+    public configurationSystemwebServerSecurityRequestFiltering requestFiltering {
+        get {
             return this.requestFilteringField;
         }
-        set
-        {
+        set {
             this.requestFilteringField = value;
         }
     }
@@ -2699,21 +2208,17 @@ public partial class configurationSystemwebServerSecurity
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerSecurityAccess
-{
+public partial class configurationSystemwebServerSecurityAccess {
 
     private string sslFlagsField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string sslFlags
-    {
-        get
-        {
+    public string sslFlags {
+        get {
             return this.sslFlagsField;
         }
-        set
-        {
+        set {
             this.sslFlagsField = value;
         }
     }
@@ -2723,8 +2228,7 @@ public partial class configurationSystemwebServerSecurityAccess
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerSecurityAuthentication
-{
+public partial class configurationSystemwebServerSecurityAuthentication {
 
     private configurationSystemwebServerSecurityAuthenticationAnonymousAuthentication anonymousAuthenticationField;
 
@@ -2739,79 +2243,61 @@ public partial class configurationSystemwebServerSecurityAuthentication
     private configurationSystemwebServerSecurityAuthenticationWindowsAuthentication windowsAuthenticationField;
 
     /// <remarks/>
-    public configurationSystemwebServerSecurityAuthenticationAnonymousAuthentication anonymousAuthentication
-    {
-        get
-        {
+    public configurationSystemwebServerSecurityAuthenticationAnonymousAuthentication anonymousAuthentication {
+        get {
             return this.anonymousAuthenticationField;
         }
-        set
-        {
+        set {
             this.anonymousAuthenticationField = value;
         }
     }
 
     /// <remarks/>
-    public object basicAuthentication
-    {
-        get
-        {
+    public object basicAuthentication {
+        get {
             return this.basicAuthenticationField;
         }
-        set
-        {
+        set {
             this.basicAuthenticationField = value;
         }
     }
 
     /// <remarks/>
-    public object clientCertificateMappingAuthentication
-    {
-        get
-        {
+    public object clientCertificateMappingAuthentication {
+        get {
             return this.clientCertificateMappingAuthenticationField;
         }
-        set
-        {
+        set {
             this.clientCertificateMappingAuthenticationField = value;
         }
     }
 
     /// <remarks/>
-    public object digestAuthentication
-    {
-        get
-        {
+    public object digestAuthentication {
+        get {
             return this.digestAuthenticationField;
         }
-        set
-        {
+        set {
             this.digestAuthenticationField = value;
         }
     }
 
     /// <remarks/>
-    public object iisClientCertificateMappingAuthentication
-    {
-        get
-        {
+    public object iisClientCertificateMappingAuthentication {
+        get {
             return this.iisClientCertificateMappingAuthenticationField;
         }
-        set
-        {
+        set {
             this.iisClientCertificateMappingAuthenticationField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerSecurityAuthenticationWindowsAuthentication windowsAuthentication
-    {
-        get
-        {
+    public configurationSystemwebServerSecurityAuthenticationWindowsAuthentication windowsAuthentication {
+        get {
             return this.windowsAuthenticationField;
         }
-        set
-        {
+        set {
             this.windowsAuthenticationField = value;
         }
     }
@@ -2821,8 +2307,7 @@ public partial class configurationSystemwebServerSecurityAuthentication
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerSecurityAuthenticationAnonymousAuthentication
-{
+public partial class configurationSystemwebServerSecurityAuthenticationAnonymousAuthentication {
 
     private bool enabledField;
 
@@ -2830,28 +2315,22 @@ public partial class configurationSystemwebServerSecurityAuthenticationAnonymous
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool enabled
-    {
-        get
-        {
+    public bool enabled {
+        get {
             return this.enabledField;
         }
-        set
-        {
+        set {
             this.enabledField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string userName
-    {
-        get
-        {
+    public string userName {
+        get {
             return this.userNameField;
         }
-        set
-        {
+        set {
             this.userNameField = value;
         }
     }
@@ -2861,8 +2340,7 @@ public partial class configurationSystemwebServerSecurityAuthenticationAnonymous
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerSecurityAuthenticationWindowsAuthentication
-{
+public partial class configurationSystemwebServerSecurityAuthenticationWindowsAuthentication {
 
     private configurationSystemwebServerSecurityAuthenticationWindowsAuthenticationAdd[] providersField;
 
@@ -2870,28 +2348,22 @@ public partial class configurationSystemwebServerSecurityAuthenticationWindowsAu
 
     /// <remarks/>
     [System.Xml.Serialization.XmlArrayItemAttribute("add", IsNullable = false)]
-    public configurationSystemwebServerSecurityAuthenticationWindowsAuthenticationAdd[] providers
-    {
-        get
-        {
+    public configurationSystemwebServerSecurityAuthenticationWindowsAuthenticationAdd[] providers {
+        get {
             return this.providersField;
         }
-        set
-        {
+        set {
             this.providersField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool enabled
-    {
-        get
-        {
+    public bool enabled {
+        get {
             return this.enabledField;
         }
-        set
-        {
+        set {
             this.enabledField = value;
         }
     }
@@ -2901,21 +2373,17 @@ public partial class configurationSystemwebServerSecurityAuthenticationWindowsAu
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerSecurityAuthenticationWindowsAuthenticationAdd
-{
+public partial class configurationSystemwebServerSecurityAuthenticationWindowsAuthenticationAdd {
 
     private string valueField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string value
-    {
-        get
-        {
+    public string value {
+        get {
             return this.valueField;
         }
-        set
-        {
+        set {
             this.valueField = value;
         }
     }
@@ -2925,20 +2393,16 @@ public partial class configurationSystemwebServerSecurityAuthenticationWindowsAu
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerSecurityAuthorization
-{
+public partial class configurationSystemwebServerSecurityAuthorization {
 
     private configurationSystemwebServerSecurityAuthorizationAdd addField;
 
     /// <remarks/>
-    public configurationSystemwebServerSecurityAuthorizationAdd add
-    {
-        get
-        {
+    public configurationSystemwebServerSecurityAuthorizationAdd add {
+        get {
             return this.addField;
         }
-        set
-        {
+        set {
             this.addField = value;
         }
     }
@@ -2948,8 +2412,7 @@ public partial class configurationSystemwebServerSecurityAuthorization
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerSecurityAuthorizationAdd
-{
+public partial class configurationSystemwebServerSecurityAuthorizationAdd {
 
     private string accessTypeField;
 
@@ -2957,28 +2420,22 @@ public partial class configurationSystemwebServerSecurityAuthorizationAdd
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string accessType
-    {
-        get
-        {
+    public string accessType {
+        get {
             return this.accessTypeField;
         }
-        set
-        {
+        set {
             this.accessTypeField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string users
-    {
-        get
-        {
+    public string users {
+        get {
             return this.usersField;
         }
-        set
-        {
+        set {
             this.usersField = value;
         }
     }
@@ -2988,8 +2445,7 @@ public partial class configurationSystemwebServerSecurityAuthorizationAdd
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerSecurityAdd
-{
+public partial class configurationSystemwebServerSecurityAdd {
 
     private string pathField;
 
@@ -3001,56 +2457,44 @@ public partial class configurationSystemwebServerSecurityAdd
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string path
-    {
-        get
-        {
+    public string path {
+        get {
             return this.pathField;
         }
-        set
-        {
+        set {
             this.pathField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool allowed
-    {
-        get
-        {
+    public bool allowed {
+        get {
             return this.allowedField;
         }
-        set
-        {
+        set {
             this.allowedField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string groupId
-    {
-        get
-        {
+    public string groupId {
+        get {
             return this.groupIdField;
         }
-        set
-        {
+        set {
             this.groupIdField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string description
-    {
-        get
-        {
+    public string description {
+        get {
             return this.descriptionField;
         }
-        set
-        {
+        set {
             this.descriptionField = value;
         }
     }
@@ -3060,8 +2504,7 @@ public partial class configurationSystemwebServerSecurityAdd
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerSecurityRequestFiltering
-{
+public partial class configurationSystemwebServerSecurityRequestFiltering {
 
     private configurationSystemwebServerSecurityRequestFilteringAdd[] denyUrlSequencesField;
 
@@ -3079,94 +2522,73 @@ public partial class configurationSystemwebServerSecurityRequestFiltering
 
     /// <remarks/>
     [System.Xml.Serialization.XmlArrayItemAttribute("add", IsNullable = false)]
-    public configurationSystemwebServerSecurityRequestFilteringAdd[] denyUrlSequences
-    {
-        get
-        {
+    public configurationSystemwebServerSecurityRequestFilteringAdd[] denyUrlSequences {
+        get {
             return this.denyUrlSequencesField;
         }
-        set
-        {
+        set {
             this.denyUrlSequencesField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerSecurityRequestFilteringFileExtensions fileExtensions
-    {
-        get
-        {
+    public configurationSystemwebServerSecurityRequestFilteringFileExtensions fileExtensions {
+        get {
             return this.fileExtensionsField;
         }
-        set
-        {
+        set {
             this.fileExtensionsField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerSecurityRequestFilteringRequestLimits requestLimits
-    {
-        get
-        {
+    public configurationSystemwebServerSecurityRequestFilteringRequestLimits requestLimits {
+        get {
             return this.requestLimitsField;
         }
-        set
-        {
+        set {
             this.requestLimitsField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerSecurityRequestFilteringVerbs verbs
-    {
-        get
-        {
+    public configurationSystemwebServerSecurityRequestFilteringVerbs verbs {
+        get {
             return this.verbsField;
         }
-        set
-        {
+        set {
             this.verbsField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerSecurityRequestFilteringHiddenSegments hiddenSegments
-    {
-        get
-        {
+    public configurationSystemwebServerSecurityRequestFilteringHiddenSegments hiddenSegments {
+        get {
             return this.hiddenSegmentsField;
         }
-        set
-        {
+        set {
             this.hiddenSegmentsField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool allowDoubleEscaping
-    {
-        get
-        {
+    public bool allowDoubleEscaping {
+        get {
             return this.allowDoubleEscapingField;
         }
-        set
-        {
+        set {
             this.allowDoubleEscapingField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool allowHighBitCharacters
-    {
-        get
-        {
+    public bool allowHighBitCharacters {
+        get {
             return this.allowHighBitCharactersField;
         }
-        set
-        {
+        set {
             this.allowHighBitCharactersField = value;
         }
     }
@@ -3176,21 +2598,17 @@ public partial class configurationSystemwebServerSecurityRequestFiltering
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerSecurityRequestFilteringAdd
-{
+public partial class configurationSystemwebServerSecurityRequestFilteringAdd {
 
     private string sequenceField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string sequence
-    {
-        get
-        {
+    public string sequence {
+        get {
             return this.sequenceField;
         }
-        set
-        {
+        set {
             this.sequenceField = value;
         }
     }
@@ -3200,8 +2618,7 @@ public partial class configurationSystemwebServerSecurityRequestFilteringAdd
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerSecurityRequestFilteringFileExtensions
-{
+public partial class configurationSystemwebServerSecurityRequestFilteringFileExtensions {
 
     private configurationSystemwebServerSecurityRequestFilteringFileExtensionsAdd[] addField;
 
@@ -3211,42 +2628,33 @@ public partial class configurationSystemwebServerSecurityRequestFilteringFileExt
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("add")]
-    public configurationSystemwebServerSecurityRequestFilteringFileExtensionsAdd[] add
-    {
-        get
-        {
+    public configurationSystemwebServerSecurityRequestFilteringFileExtensionsAdd[] add {
+        get {
             return this.addField;
         }
-        set
-        {
+        set {
             this.addField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool allowUnlisted
-    {
-        get
-        {
+    public bool allowUnlisted {
+        get {
             return this.allowUnlistedField;
         }
-        set
-        {
+        set {
             this.allowUnlistedField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool applyToWebDAV
-    {
-        get
-        {
+    public bool applyToWebDAV {
+        get {
             return this.applyToWebDAVField;
         }
-        set
-        {
+        set {
             this.applyToWebDAVField = value;
         }
     }
@@ -3256,8 +2664,7 @@ public partial class configurationSystemwebServerSecurityRequestFilteringFileExt
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerSecurityRequestFilteringFileExtensionsAdd
-{
+public partial class configurationSystemwebServerSecurityRequestFilteringFileExtensionsAdd {
 
     private string fileExtensionField;
 
@@ -3265,28 +2672,22 @@ public partial class configurationSystemwebServerSecurityRequestFilteringFileExt
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string fileExtension
-    {
-        get
-        {
+    public string fileExtension {
+        get {
             return this.fileExtensionField;
         }
-        set
-        {
+        set {
             this.fileExtensionField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool allowed
-    {
-        get
-        {
+    public bool allowed {
+        get {
             return this.allowedField;
         }
-        set
-        {
+        set {
             this.allowedField = value;
         }
     }
@@ -3296,8 +2697,7 @@ public partial class configurationSystemwebServerSecurityRequestFilteringFileExt
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerSecurityRequestFilteringRequestLimits
-{
+public partial class configurationSystemwebServerSecurityRequestFilteringRequestLimits {
 
     private uint maxAllowedContentLengthField;
 
@@ -3307,42 +2707,33 @@ public partial class configurationSystemwebServerSecurityRequestFilteringRequest
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public uint maxAllowedContentLength
-    {
-        get
-        {
+    public uint maxAllowedContentLength {
+        get {
             return this.maxAllowedContentLengthField;
         }
-        set
-        {
+        set {
             this.maxAllowedContentLengthField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public ushort maxUrl
-    {
-        get
-        {
+    public ushort maxUrl {
+        get {
             return this.maxUrlField;
         }
-        set
-        {
+        set {
             this.maxUrlField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public ushort maxQueryString
-    {
-        get
-        {
+    public ushort maxQueryString {
+        get {
             return this.maxQueryStringField;
         }
-        set
-        {
+        set {
             this.maxQueryStringField = value;
         }
     }
@@ -3352,8 +2743,7 @@ public partial class configurationSystemwebServerSecurityRequestFilteringRequest
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerSecurityRequestFilteringVerbs
-{
+public partial class configurationSystemwebServerSecurityRequestFilteringVerbs {
 
     private bool allowUnlistedField;
 
@@ -3361,28 +2751,22 @@ public partial class configurationSystemwebServerSecurityRequestFilteringVerbs
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool allowUnlisted
-    {
-        get
-        {
+    public bool allowUnlisted {
+        get {
             return this.allowUnlistedField;
         }
-        set
-        {
+        set {
             this.allowUnlistedField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool applyToWebDAV
-    {
-        get
-        {
+    public bool applyToWebDAV {
+        get {
             return this.applyToWebDAVField;
         }
-        set
-        {
+        set {
             this.applyToWebDAVField = value;
         }
     }
@@ -3392,8 +2776,7 @@ public partial class configurationSystemwebServerSecurityRequestFilteringVerbs
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerSecurityRequestFilteringHiddenSegments
-{
+public partial class configurationSystemwebServerSecurityRequestFilteringHiddenSegments {
 
     private configurationSystemwebServerSecurityRequestFilteringHiddenSegmentsAdd[] addField;
 
@@ -3401,28 +2784,22 @@ public partial class configurationSystemwebServerSecurityRequestFilteringHiddenS
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("add")]
-    public configurationSystemwebServerSecurityRequestFilteringHiddenSegmentsAdd[] add
-    {
-        get
-        {
+    public configurationSystemwebServerSecurityRequestFilteringHiddenSegmentsAdd[] add {
+        get {
             return this.addField;
         }
-        set
-        {
+        set {
             this.addField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public bool applyToWebDAV
-    {
-        get
-        {
+    public bool applyToWebDAV {
+        get {
             return this.applyToWebDAVField;
         }
-        set
-        {
+        set {
             this.applyToWebDAVField = value;
         }
     }
@@ -3432,21 +2809,17 @@ public partial class configurationSystemwebServerSecurityRequestFilteringHiddenS
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerSecurityRequestFilteringHiddenSegmentsAdd
-{
+public partial class configurationSystemwebServerSecurityRequestFilteringHiddenSegmentsAdd {
 
     private string segmentField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string segment
-    {
-        get
-        {
+    public string segment {
+        get {
             return this.segmentField;
         }
-        set
-        {
+        set {
             this.segmentField = value;
         }
     }
@@ -3456,8 +2829,7 @@ public partial class configurationSystemwebServerSecurityRequestFilteringHiddenS
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerStaticContent
-{
+public partial class configurationSystemwebServerStaticContent {
 
     private configurationSystemwebServerStaticContentMimeMap[] mimeMapField;
 
@@ -3465,28 +2837,22 @@ public partial class configurationSystemwebServerStaticContent
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("mimeMap")]
-    public configurationSystemwebServerStaticContentMimeMap[] mimeMap
-    {
-        get
-        {
+    public configurationSystemwebServerStaticContentMimeMap[] mimeMap {
+        get {
             return this.mimeMapField;
         }
-        set
-        {
+        set {
             this.mimeMapField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string lockAttributes
-    {
-        get
-        {
+    public string lockAttributes {
+        get {
             return this.lockAttributesField;
         }
-        set
-        {
+        set {
             this.lockAttributesField = value;
         }
     }
@@ -3496,8 +2862,7 @@ public partial class configurationSystemwebServerStaticContent
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerStaticContentMimeMap
-{
+public partial class configurationSystemwebServerStaticContentMimeMap {
 
     private string fileExtensionField;
 
@@ -3505,28 +2870,22 @@ public partial class configurationSystemwebServerStaticContentMimeMap
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string fileExtension
-    {
-        get
-        {
+    public string fileExtension {
+        get {
             return this.fileExtensionField;
         }
-        set
-        {
+        set {
             this.fileExtensionField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string mimeType
-    {
-        get
-        {
+    public string mimeType {
+        get {
             return this.mimeTypeField;
         }
-        set
-        {
+        set {
             this.mimeTypeField = value;
         }
     }
@@ -3536,8 +2895,7 @@ public partial class configurationSystemwebServerStaticContentMimeMap
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerTracing
-{
+public partial class configurationSystemwebServerTracing {
 
     private configurationSystemwebServerTracingAdd[] traceProviderDefinitionsField;
 
@@ -3545,27 +2903,21 @@ public partial class configurationSystemwebServerTracing
 
     /// <remarks/>
     [System.Xml.Serialization.XmlArrayItemAttribute("add", IsNullable = false)]
-    public configurationSystemwebServerTracingAdd[] traceProviderDefinitions
-    {
-        get
-        {
+    public configurationSystemwebServerTracingAdd[] traceProviderDefinitions {
+        get {
             return this.traceProviderDefinitionsField;
         }
-        set
-        {
+        set {
             this.traceProviderDefinitionsField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerTracingTraceFailedRequests traceFailedRequests
-    {
-        get
-        {
+    public configurationSystemwebServerTracingTraceFailedRequests traceFailedRequests {
+        get {
             return this.traceFailedRequestsField;
         }
-        set
-        {
+        set {
             this.traceFailedRequestsField = value;
         }
     }
@@ -3575,8 +2927,7 @@ public partial class configurationSystemwebServerTracing
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerTracingAdd
-{
+public partial class configurationSystemwebServerTracingAdd {
 
     private configurationSystemwebServerTracingAddAreas areasField;
 
@@ -3585,42 +2936,33 @@ public partial class configurationSystemwebServerTracingAdd
     private string guidField;
 
     /// <remarks/>
-    public configurationSystemwebServerTracingAddAreas areas
-    {
-        get
-        {
+    public configurationSystemwebServerTracingAddAreas areas {
+        get {
             return this.areasField;
         }
-        set
-        {
+        set {
             this.areasField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string name
-    {
-        get
-        {
+    public string name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string guid
-    {
-        get
-        {
+    public string guid {
+        get {
             return this.guidField;
         }
-        set
-        {
+        set {
             this.guidField = value;
         }
     }
@@ -3630,36 +2972,29 @@ public partial class configurationSystemwebServerTracingAdd
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerTracingAddAreas
-{
+public partial class configurationSystemwebServerTracingAddAreas {
 
     private object clearField;
 
     private configurationSystemwebServerTracingAddAreasAdd[] addField;
 
     /// <remarks/>
-    public object clear
-    {
-        get
-        {
+    public object clear {
+        get {
             return this.clearField;
         }
-        set
-        {
+        set {
             this.clearField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("add")]
-    public configurationSystemwebServerTracingAddAreasAdd[] add
-    {
-        get
-        {
+    public configurationSystemwebServerTracingAddAreasAdd[] add {
+        get {
             return this.addField;
         }
-        set
-        {
+        set {
             this.addField = value;
         }
     }
@@ -3669,8 +3004,7 @@ public partial class configurationSystemwebServerTracingAddAreas
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerTracingAddAreasAdd
-{
+public partial class configurationSystemwebServerTracingAddAreasAdd {
 
     private string nameField;
 
@@ -3678,28 +3012,22 @@ public partial class configurationSystemwebServerTracingAddAreasAdd
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string name
-    {
-        get
-        {
+    public string name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public ushort value
-    {
-        get
-        {
+    public ushort value {
+        get {
             return this.valueField;
         }
-        set
-        {
+        set {
             this.valueField = value;
         }
     }
@@ -3709,20 +3037,16 @@ public partial class configurationSystemwebServerTracingAddAreasAdd
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerTracingTraceFailedRequests
-{
+public partial class configurationSystemwebServerTracingTraceFailedRequests {
 
     private configurationSystemwebServerTracingTraceFailedRequestsAdd addField;
 
     /// <remarks/>
-    public configurationSystemwebServerTracingTraceFailedRequestsAdd add
-    {
-        get
-        {
+    public configurationSystemwebServerTracingTraceFailedRequestsAdd add {
+        get {
             return this.addField;
         }
-        set
-        {
+        set {
             this.addField = value;
         }
     }
@@ -3732,8 +3056,7 @@ public partial class configurationSystemwebServerTracingTraceFailedRequests
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerTracingTraceFailedRequestsAdd
-{
+public partial class configurationSystemwebServerTracingTraceFailedRequestsAdd {
 
     private configurationSystemwebServerTracingTraceFailedRequestsAddAdd[] traceAreasField;
 
@@ -3743,41 +3066,32 @@ public partial class configurationSystemwebServerTracingTraceFailedRequestsAdd
 
     /// <remarks/>
     [System.Xml.Serialization.XmlArrayItemAttribute("add", IsNullable = false)]
-    public configurationSystemwebServerTracingTraceFailedRequestsAddAdd[] traceAreas
-    {
-        get
-        {
+    public configurationSystemwebServerTracingTraceFailedRequestsAddAdd[] traceAreas {
+        get {
             return this.traceAreasField;
         }
-        set
-        {
+        set {
             this.traceAreasField = value;
         }
     }
 
     /// <remarks/>
-    public configurationSystemwebServerTracingTraceFailedRequestsAddFailureDefinitions failureDefinitions
-    {
-        get
-        {
+    public configurationSystemwebServerTracingTraceFailedRequestsAddFailureDefinitions failureDefinitions {
+        get {
             return this.failureDefinitionsField;
         }
-        set
-        {
+        set {
             this.failureDefinitionsField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string path
-    {
-        get
-        {
+    public string path {
+        get {
             return this.pathField;
         }
-        set
-        {
+        set {
             this.pathField = value;
         }
     }
@@ -3787,8 +3101,7 @@ public partial class configurationSystemwebServerTracingTraceFailedRequestsAdd
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerTracingTraceFailedRequestsAddAdd
-{
+public partial class configurationSystemwebServerTracingTraceFailedRequestsAddAdd {
 
     private string providerField;
 
@@ -3798,42 +3111,33 @@ public partial class configurationSystemwebServerTracingTraceFailedRequestsAddAd
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string provider
-    {
-        get
-        {
+    public string provider {
+        get {
             return this.providerField;
         }
-        set
-        {
+        set {
             this.providerField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string verbosity
-    {
-        get
-        {
+    public string verbosity {
+        get {
             return this.verbosityField;
         }
-        set
-        {
+        set {
             this.verbosityField = value;
         }
     }
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string areas
-    {
-        get
-        {
+    public string areas {
+        get {
             return this.areasField;
         }
-        set
-        {
+        set {
             this.areasField = value;
         }
     }
@@ -3843,21 +3147,17 @@ public partial class configurationSystemwebServerTracingTraceFailedRequestsAddAd
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class configurationSystemwebServerTracingTraceFailedRequestsAddFailureDefinitions
-{
+public partial class configurationSystemwebServerTracingTraceFailedRequestsAddFailureDefinitions {
 
     private string statusCodesField;
 
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string statusCodes
-    {
-        get
-        {
+    public string statusCodes {
+        get {
             return this.statusCodesField;
         }
-        set
-        {
+        set {
             this.statusCodesField = value;
         }
     }
