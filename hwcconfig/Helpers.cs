@@ -2,7 +2,7 @@
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace hwcconfig {
+namespace Helpers {
     internal static class ParsingHelpers {
         /// <summary>
         /// Parser for the Application Pool configs.
