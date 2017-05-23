@@ -1,3 +1,9 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.IO" #>
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
   <configSections>
@@ -77,7 +83,7 @@
   <system.applicationHost>
 
     <applicationPools>
-		<add name="AppPool" managedRuntimeVersion="v4.0" managedPipelineMode="Integrated" CLRConfigFile="" autoStart="true" startMode="AlwaysRunning" />
+		<add name="AppPool<#= Model.Port #>" managedRuntimeVersion="v4.0" managedPipelineMode="Integrated" CLRConfigFile="<#= Model.AspnetConfigPath #>" autoStart="true" startMode="AlwaysRunning" />
     </applicationPools>
 
     <listenerAdapters>
@@ -86,17 +92,17 @@
 
     <sites>
       <siteDefaults>
-        <logFile logFormat="W3C" directory="\LogFiles" />
+        <logFile logFormat="W3C" directory="<#= Model.TempDirectory #>\LogFiles" />
         <traceFailedRequestsLogging enabled="false" />
       </siteDefaults>
-      <applicationDefaults applicationPool="AppPool" />
+      <applicationDefaults applicationPool="AppPool<#= Model.Port #>" />
       <virtualDirectoryDefaults allowSubDirConfig="true" />
 			<site name="IronFoundrySite" id="1" serverAutoStart="true">
-        <application path="/" applicationPool="AppPool">
-          <virtualDirectory path="/" physicalPath="" />
+        <application path="/" applicationPool="AppPool<#= Model.Port #>">
+          <virtualDirectory path="/" physicalPath="<#= Path.GetFullPath(Model.AppRootPath) #>" />
         </application>
         <bindings>
-          <binding protocol="http" bindingInformation="*::" />
+          <binding protocol="http" bindingInformation="*:<#= Model.Port #>:" />
         </bindings>
       </site>
 
@@ -130,13 +136,75 @@
 
     <fastCgi />
 
-    <globalModules>
+<globalModules>
       
-      <add name="" />
+      <add name="UriCacheModule" image="%windir%\System32\inetsrv\cachuri.dll"  />
+      
+      <add name="FileCacheModule" image="%windir%\System32\inetsrv\cachfile.dll"  />
+      
+      <add name="TokenCacheModule" image="%windir%\System32\inetsrv\cachtokn.dll"  />
+      
+      <add name="HttpCacheModule" image="%windir%\System32\inetsrv\cachhttp.dll"  />
+      
+      <add name="StaticCompressionModule" image="%windir%\System32\inetsrv\compstat.dll"  />
+      
+      <add name="DefaultDocumentModule" image="%windir%\System32\inetsrv\defdoc.dll"  />
+      
+      <add name="DirectoryListingModule" image="%windir%\System32\inetsrv\dirlist.dll"  />
+      
+      <add name="ProtocolSupportModule" image="%windir%\System32\inetsrv\protsup.dll"  />
+      
+      <add name="StaticFileModule" image="%windir%\System32\inetsrv\static.dll"  />
+      
+      <add name="AnonymousAuthenticationModule" image="%windir%\System32\inetsrv\authanon.dll"  />
+      
+      <add name="RequestFilteringModule" image="%windir%\System32\inetsrv\modrqflt.dll"  />
+      
+      <add name="CustomErrorModule" image="%windir%\System32\inetsrv\custerr.dll"  />
+      
+      <add name="HttpLoggingModule" image="%windir%\System32\inetsrv\loghttp.dll"  />
+      
+      <add name="RequestMonitorModule" image="%windir%\System32\inetsrv\iisreqs.dll"  />
+      
+      <add name="IsapiModule" image="%windir%\System32\inetsrv\isapi.dll"  />
+      
+      <add name="IsapiFilterModule" image="%windir%\System32\inetsrv\filter.dll"  />
+      
+      <add name="ConfigurationValidationModule" image="%windir%\System32\inetsrv\validcfg.dll"  />
+      
+      <add name="ManagedEngineV4.0_32bit" image="%windir%\Microsoft.NET\Framework\v4.0.30319\webengine4.dll"  preCondition="integratedMode,runtimeVersionv4.0,bitness32"  />
+      
+      <add name="ManagedEngineV4.0_64bit" image="%windir%\Microsoft.NET\Framework64\v4.0.30319\webengine4.dll"  preCondition="integratedMode,runtimeVersionv4.0,bitness64"  />
+      
+      <add name="CustomLoggingModule" image="%windir%\System32\inetsrv\logcust.dll"  />
+      
+      <add name="TracingModule" image="%windir%\System32\inetsrv\iisetw.dll"  />
+      
+      <add name="FailedRequestsTracingModule" image="%windir%\System32\inetsrv\iisfreb.dll"  />
+      
+      <add name="WebSocketModule" image="%windir%\System32\inetsrv\iiswsock.dll"  />
+      
+      <add name="DynamicCompressionModule" image="%windir%\System32\inetsrv\compdyn.dll"  />
+      
+      <add name="HttpRedirectionModule" image="%windir%\System32\inetsrv\redirect.dll"  />
+      
+      <add name="CertificateMappingAuthenticationModule" image="%windir%\System32\inetsrv\authcert.dll"  />
+      
+      <add name="UrlAuthorizationModule" image="%windir%\System32\inetsrv\urlauthz.dll"  />
+      
+      <add name="WindowsAuthenticationModule" image="%windir%\System32\inetsrv\authsspi.dll"  />
+      
+      <add name="DigestAuthenticationModule" image="%windir%\System32\inetsrv\authmd5.dll"  />
+      
+      <add name="IISCertificateMappingAuthenticationModule" image="%windir%\System32\inetsrv\authmap.dll"  />
+      
+      <add name="IpRestrictionModule" image="%windir%\System32\inetsrv\iprestr.dll"  />
+      
+      <add name="DynamicIpRestrictionModule" image="%windir%\System32\inetsrv\diprestr.dll"  />
       
     </globalModules>
 
-    <httpCompression directory="\IIS Temporary Compressed Files">
+    <httpCompression directory="<#= Model.TempDirectory #>\IIS Temporary Compressed Files">
       <scheme name="gzip" dll="%Windir%\system32\inetsrv\gzip.dll" />
       <staticTypes>
         <add mimeType="text/*" enabled="true" />

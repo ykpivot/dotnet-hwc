@@ -1,63 +1,172 @@
 ﻿using System;
-using System.Collections.Generic;
-using CommandLine;
 using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Threading;
+using System.Xml.Linq;
+using System.Xml.XPath;
+using CommandLine;
+using HwcBootstrapper.ConfigTemplates;
+using SimpleImpersonation;
 
-namespace dotnet_hwc {
-    class Program {
+namespace HwcBootstrapper
+{
+    class Program
+    {
+        private static Options _options;
 
-        static void Main(string[] args) {
-            var options = new Options();
+        private static readonly ManualResetEvent _exitWaitHandle = new ManualResetEvent(false);
 
-            // this feels weird and wrong, whatevs.
-            try {
-                var isValid = Parser.Default.ParseArgumentsStrict(args, options);
-                if (!isValid) {
-                    throw new ParserException("bad args!");
+        static int Main(string[] args)
+        {
+            SystemEvents.SetConsoleEventHandler(ConsoleEventCallback);
+            try
+            {
+                _options = LoadOptions(args);
+
+                var appConfigTemplate = new ApplicationHostConfig {Model = _options};
+                var appConfigText = appConfigTemplate.TransformText();
+                ValidateRequiredDllDependencies(appConfigText);
+                var webConfigText = new WebConfig() {Model = _options}.TransformText();
+                var aspNetText = new AspNetConfig().TransformText();
+
+                Directory.CreateDirectory(_options.TempDirectory);
+                Directory.CreateDirectory(_options.ConfigDirectory);
+                File.WriteAllText(_options.ApplicationHostConfigPath, appConfigText);
+                File.WriteAllText(_options.WebConfigPath, webConfigText);
+                File.WriteAllText(_options.AspnetConfigPath, aspNetText);
+
+                var impersonationRequired = !string.IsNullOrEmpty(_options.User);
+                IDisposable impresonationContext = null;
+                if (impersonationRequired)
+                {
+                    string userName = _options.User;
+                    string domain = string.Empty;
+                    var match = Regex.Match(_options.User, @"^(?<domain>\w+)\\(?<user>\w+)$"); // parse out domain from format DOMAIN\Username
+
+                    if (match.Success)
+                    {
+                        userName = match.Groups["user"].Value;
+                        domain = match.Groups["domain"].Value;
+                    }
+
+                    impresonationContext = Impersonation.LogonUser(domain, userName, _options.Password, LogonType.NewCredentials);
                 }
-            } catch (ParserException pe) {
-                Console.WriteLine("Error: {0}", pe);
-                Environment.Exit(1);
-            }
-
-            string rootPath = Path.GetPathRoot(options.AppRootPath);
-            string uuid = Guid.NewGuid().ToString();
-            string userProfile = "";
-
-            // I don't think we actually need this, it should exist as you literally cannot
-            // do anything not as a user.
-            try {
-                userProfile = Environment.GetEnvironmentVariable("USERPROFILE");
-                if (userProfile == "") {
-                    throw new Exception();
+                try
+                {
+                    HostableWebCore.Activate(_options.ApplicationHostConfigPath, _options.WebConfigPath, _options.ApplicationInstanceId);
                 }
-            } catch (Exception) {
-                Console.WriteLine("%USERPROFILE% is missing!");
-                Environment.Exit(1);
+                catch (UnauthorizedAccessException)
+                {
+                    Console.Error.WriteLine("Access denied starting hostable web core. Start the application as administrator");
+                    Console.WriteLine("===========================");
+                    throw;
+                }
+                finally
+                {
+                    impresonationContext?.Dispose();
+                }
+
+                Console.WriteLine($"Server ID {_options.ApplicationInstanceId} started");
+                Console.WriteLine("PRESS Enter to shutdown");
+                // we gonna read on different thread here because Console.ReadLine is not the only way the program can end
+                // we're also listening to the system events where the app is ordered to shutdown. exitWaitHandle is used to
+                // hook up both of these events
+                new Thread(() =>
+                    {
+                        Console.ReadLine();
+                        _exitWaitHandle.Set();
+                    }).Start();
+                _exitWaitHandle.WaitOne();
+                return 0;
             }
 
-            string tempPath = Path.GetPathRoot(Path.Combine(userProfile, uuid, "tmp"));
-
-            try {
-                Directory.CreateDirectory(tempPath);
-            } catch (IOException io) {
-                Console.WriteLine("cannot create temp directory for {0}: {1}", options.AppRootPath, io);
+            catch (ValidationException ve)
+            {
+                Console.Error.WriteLine(ve.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine(ex);
+            }
+            finally
+            {
+                Shutdown();
             }
 
-            // TODO: hwc new config logic
-
-
+            return 1;
         }
-    }
 
-    class Options {
-        [Option("appRootPath", DefaultValue = ".", HelpText = "app web root path", Required = true)]
-        public string AppRootPath { get; set; }
+        private static void Shutdown()
+        {
 
-        [Option("port", DefaultValue = 0, HelpText = "port for the application to listen with", Required = false)]
-        public int Port { get; set; }
+            try
+            {
+                HostableWebCore.Shutdown(true);
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine("Hostable webcore didn't shut down cleanly:");
+                Console.Error.WriteLine(ex);
+            }
+            if (Directory.Exists(_options.TempDirectory))
+            {
+                for (var i = 0; i < 5; i++)
+                {
+                    try
+                    {
+                        Directory.Delete(_options.TempDirectory, true);
+                        break;
+                    }
+                    catch (UnauthorizedAccessException) // just make sure all locks are released, cuz hwc may not shutdown instantly
+                    {
+                        Thread.Sleep(500);
+                    }
+                }
+            }
+        }
 
-        [Option("user", DefaultValue = "", HelpText = "user context to run application to run under", Required = false)]
-        public string User { get; set; }
+        static bool ConsoleEventCallback(CtrlEvent eventType)
+        {
+            _exitWaitHandle.Set();
+            return true;
+        }
+
+        public static Options LoadOptions(string[] args)
+        {
+            var options = new Options();
+            int port;
+            if (int.TryParse(Environment.GetEnvironmentVariable("PORT"), out port))
+            {
+                options.Port = port;
+            }
+            var isValid = Parser.Default.ParseArgumentsStrict(args, options);
+            if (!isValid)
+            {
+                throw new ValidationException("bad args!");
+            }
+            var userProfileFolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            options.ApplicationInstanceId = Guid.NewGuid().ToString();
+            options.TempDirectory = Path.Combine(userProfileFolder, $"tmp{options.ApplicationInstanceId}");
+            var configDirectory = Path.Combine(options.TempDirectory, "config");
+            options.ApplicationHostConfigPath = Path.Combine(configDirectory, "ApplicationHost.config");
+            options.WebConfigPath = Path.Combine(configDirectory, "Web.config");
+            options.AspnetConfigPath = Path.Combine(configDirectory, "AspNet.config");
+            return options;
+        }
+
+        public static void ValidateRequiredDllDependencies(string applicationHostConfigText)
+        {
+            var doc = XDocument.Parse(applicationHostConfigText);
+
+            var missingDlls = doc.XPathSelectElements("//configuration/system.webServer/globalModules/add")
+                .Select(x => Environment.ExpandEnvironmentVariables(x.Attribute("image").Value))
+                .Where(x => !File.Exists(x))
+                .ToList();
+            if (missingDlls.Any())
+            {
+                throw new ValidationException($"Missing required ddls:\n{string.Join("\n", missingDlls)}");
+            }
+        }
     }
 }
