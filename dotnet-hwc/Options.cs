@@ -41,9 +41,13 @@ namespace HwcBootstrapper
         public string Domain { get; private set; }
 
         [Option("password", HelpText = "windows password to run application to run under", Required = false)]
-
         public string Password { get; set; }
+        [Option("thumbprint", HelpText = "certificate thumbprint", Required = false)]
+        public string Thumbprint { get; set; }
+        [Option("protocol", HelpText = "http or https", Required = false)]
+        public string Protocol { get; set; } = "http";
 
+        public bool UseSSL => Protocol == "https";
         public string AspnetConfigPath { get; set; } = string.Empty;
         public string WebConfigPath { get; set; } = string.Empty;
         public string TempDirectory { get; set; } = string.Empty;

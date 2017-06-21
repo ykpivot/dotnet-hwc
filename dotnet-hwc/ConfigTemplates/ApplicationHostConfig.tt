@@ -102,7 +102,7 @@
           <virtualDirectory path="/" physicalPath="<#= Path.GetFullPath(Model.AppRootPath) #>" />
         </application>
         <bindings>
-          <binding protocol="http" bindingInformation="*:<#= Model.Port #>:" />
+          <binding protocol="<#= Model.Protocol #>" bindingInformation="*:<#= Model.Port #>:" />
         </bindings>
       </site>
 
