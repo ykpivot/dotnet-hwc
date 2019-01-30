@@ -8,12 +8,18 @@ using System.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using CommandLine;
 using HwcBootstrapper.ConfigTemplates;
 using JobManagement;
+using Microsoft.Extensions.Configuration;
+using Pivotal.Extensions.Configuration.ConfigServer;
 using SimpleImpersonation;
+using Steeltoe.CloudFoundry.Connector;
+using Steeltoe.Extensions.Configuration.CloudFoundry;
+using Steeltoe.CloudFoundry.Connector.Services;
 
 namespace HwcBootstrapper
 {
@@ -27,6 +33,14 @@ namespace HwcBootstrapper
         {
             SystemEvents.SetConsoleEventHandler(ConsoleEventCallback);
             IDisposable impresonationContext = null;
+            var config = new ConfigurationBuilder().AddCloudFoundry().Build();
+            
+            var isConfigServerBound = config.AsEnumerable().Select(x => x.Key).Any(x => x == "vcap:services:p-config-server:0");
+            Console.WriteLine(isConfigServerBound);
+            foreach (var item in config.AsEnumerable())
+            {
+                Console.WriteLine($"{item.Key}: {item.Value}");
+            }
             try
             {
                 _options = LoadOptions(args);
@@ -113,23 +127,38 @@ namespace HwcBootstrapper
                     File.WriteAllText(_options.WebConfigPath, webConfigText);
                     File.WriteAllText(_options.AspnetConfigPath, aspNetText);
 
-                    Console.WriteLine("Activating HWC with following settings:");
+                    var webConfig = Path.Combine(_options.AppRootPath, "web.config");
+                    var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+                    var xdt = Path.Combine(_options.AppRootPath, $"web.{environment}.config");
+                    if (!string.IsNullOrEmpty(environment) && File.Exists(xdt))
+                    {
+                        Console.WriteLine($"Applying {xdt} to web.config");
+                        var transform = new Microsoft.Web.XmlTransform.XmlTransformation(xdt);
+                        var doc = new XmlDocument();
+                        doc.Load(webConfig);
+                        transform.Apply(doc);
 
-//                if (impersonationRequired)
-//                {
-//                    string userName = _options.User;
-//                    string domain = null;
-//                    var match = Regex.Match(_options.User, @"^(?<domain>\w+)\\(?<user>\w+)$"); // parse out domain from format DOMAIN\Username
-//
-//                    if (match.Success)
-//                    {
-//                        userName = match.Groups["user"].Value;
-//                        domain = match.Groups["domain"].Value;
-//                    }
-//                    Console.WriteLine($"Impersonation user {userName} for domain {domain}");
-//                    impresonationContext = Impersonation.LogonUser(domain, userName, _options.Password, LogonType.Service);
-//                    Console.WriteLine(WindowsIdentity.GetCurrent().Name);
-//                }
+                        if (!File.Exists(webConfig + ".bak")) // backup original web.config as we're gonna transform into it's place
+                            File.Move(webConfig, webConfig + ".bak");
+                        doc.Save(webConfig);
+                    }
+
+                    if (isConfigServerBound)
+                    {
+                        config = new ConfigurationBuilder().AddConfigServer().Build();
+                        Console.WriteLine("Config server binding found - replacing matching veriables in web.config");
+                        
+                        var webConfigContent = File.ReadAllText(webConfig);
+                        foreach (var configEntry in config.AsEnumerable())
+                        {
+                            webConfigContent = webConfigContent.Replace("#{" + configEntry.Key + "}", configEntry.Value);
+                        }
+                        File.WriteAllText(webConfig, webConfigContent);
+                    }
+
+                    Console.WriteLine("Activating HWC with following settings:");
+                    
+
                     try
                     {
 
@@ -138,6 +167,7 @@ namespace HwcBootstrapper
 //                        var process = Process.Start("cmd");
 //                        var job = new Job();
 //                        job.AddProcess(process.Handle);
+                        
                         HostableWebCore.Activate(_options.ApplicationHostConfigPath, _options.WebConfigPath, _options.ApplicationInstanceId);
                     }
                     catch (UnauthorizedAccessException)
