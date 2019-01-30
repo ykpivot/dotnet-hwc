@@ -54,5 +54,7 @@ namespace HwcBootstrapper
         public string ConfigDirectory => Path.Combine(TempDirectory, "config");
         public string ApplicationHostConfigPath { get; set; } = string.Empty;
         public string ApplicationInstanceId { get; set; } = Guid.NewGuid().ToString();
+        [Option("originalUsername", HelpText = "original username", Required = false)]
+        public string OriginalUsername { get; set; }
     }
 }

@@ -39,6 +39,47 @@ namespace HwcBootstrapper
                 {
                     if (_options.UseSSL)
                     {
+                        
+                        var netshargs = $"http delete urlacl http://*:{_options.Port}/";
+
+                        var processStartInfo1 = new ProcessStartInfo("netsh", netshargs)
+                        {
+                            UseShellExecute = false,
+                            RedirectStandardError = true,
+                            RedirectStandardOutput = true,
+                            RedirectStandardInput = true,
+                            CreateNoWindow = true,
+                            Verb = "runas"
+                        };
+                        _childProcess = Process.Start(processStartInfo1);
+                        if (_childProcess == null)
+                            throw new Exception("Can't add ssl cert binding");
+                        _childProcess.BeginOutputReadLine();
+                        _childProcess.BeginErrorReadLine();
+                        _childProcess.OutputDataReceived += (sender, eventArgs) => Console.WriteLine(eventArgs.Data);
+                        _childProcess.ErrorDataReceived += (sender, eventArgs) => Console.Error.WriteLine(eventArgs.Data);
+                        _childProcess.WaitForExit(10000);
+
+                        var netshargs2 = $"http add urlacl https://*:{_options.Port}/ user={_options.OriginalUsername}";
+
+                        var processStartInfo2 = new ProcessStartInfo("netsh", netshargs2)
+                        {
+                            UseShellExecute = false,
+                            RedirectStandardError = true,
+                            RedirectStandardOutput = true,
+                            RedirectStandardInput = true,
+                            CreateNoWindow = true,
+                            Verb = "runas"
+                        };
+                        _childProcess = Process.Start(processStartInfo2);
+                        if (_childProcess == null)
+                            throw new Exception("Can't add ssl cert binding");
+                        _childProcess.BeginOutputReadLine();
+                        _childProcess.BeginErrorReadLine();
+                        _childProcess.OutputDataReceived += (sender, eventArgs) => Console.WriteLine(eventArgs.Data);
+                        _childProcess.ErrorDataReceived += (sender, eventArgs) => Console.Error.WriteLine(eventArgs.Data);
+                        _childProcess.WaitForExit(10000);
+
                         var addSslArgs = $"http add sslcert ipport=0.0.0.0:{_options.Port} appid={{{_options.ApplicationInstanceId}}} certhash={_options.Thumbprint}";
                         var processStartInfo = new ProcessStartInfo("netsh", addSslArgs)
                         {
@@ -142,7 +183,7 @@ namespace HwcBootstrapper
         private static void Impersonate()
         {
             var exeName = Process.GetCurrentProcess().MainModule.FileName;
-            var args = $"--appRootPath={_options.AppRootPath} --port={_options.Port}";
+            var args = $"--appRootPath={_options.AppRootPath} --port={_options.Port} --originalUsername={WindowsIdentity.GetCurrent().Name}";
             if(_options.UseSSL)
                 args += $" --thumbprint={_options.Thumbprint} --protocol={_options.Protocol}";
             var processStartInfo = new ProcessStartInfo(exeName, args)
@@ -244,6 +285,9 @@ namespace HwcBootstrapper
             }
             options.User = Environment.GetEnvironmentVariable("SERVICE_USERNAME");
             options.Password = Environment.GetEnvironmentVariable("SERVICE_PASSWORD");
+            options.Thumbprint = Environment.GetEnvironmentVariable("THUMBPRINT");
+            if (options.Thumbprint != null)
+                options.Protocol = "https";
 
             var isValid = Parser.Default.ParseArgumentsStrict(args, options);
             if (!isValid)
@@ -251,16 +295,17 @@ namespace HwcBootstrapper
                 throw new ValidationException("bad args!");
             }
             
-            if (options.UseSSL && options.Thumbprint != null)
+            if (options.UseSSL)
             {
+                if(string.IsNullOrEmpty(options.Thumbprint))
+                    throw new ValidationException("Certificate thumbprint must be provided when using https");
                 var store = new X509Store(StoreName.My, StoreLocation.LocalMachine);
                 store.Open(OpenFlags.ReadOnly);
                 var hasCert = store.Certificates.OfType<X509Certificate2>().Any(x => x.Thumbprint == options.Thumbprint.ToUpper());
                 if(!hasCert)
                     throw new ValidationException("Certificate with specified thumbprint is not in x509store");
             }
-            else
-                throw new ValidationException("Certificate thumbprint must be provided when using https");
+                
             var userProfileFolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
             options.ApplicationInstanceId = Guid.NewGuid().ToString();
             options.TempDirectory = Path.Combine(userProfileFolder, $"tmp{options.ApplicationInstanceId}");
