@@ -18,7 +18,7 @@ namespace HwcBootstrapper.ConfigTemplates
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Projects\dotnet-hwc\dotnet-hwc\ConfigTemplates\WebConfig.tt"
+    #line 1 "C:\workspace\code\dotnet-hwc\dotnet-hwc\ConfigTemplates\WebConfig.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class WebConfig : WebConfigBase
     {
@@ -91,7 +91,7 @@ namespace HwcBootstrapper.ConfigTemplates
                     ")\" />\r\n            <add alias=\"downlevel\" userAgent=\"Generic Downlevel\" />\r\n    " +
                     "    </clientTarget>\r\n\r\n        <compilation tempDirectory=\"");
             
-            #line 88 "C:\Projects\dotnet-hwc\dotnet-hwc\ConfigTemplates\WebConfig.tt"
+            #line 88 "C:\workspace\code\dotnet-hwc\dotnet-hwc\ConfigTemplates\WebConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.TempDirectory));
             
             #line default

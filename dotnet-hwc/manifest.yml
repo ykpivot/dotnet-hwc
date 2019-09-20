@@ -1,0 +1,7 @@
+﻿---
+applications:
+- name: gc-app
+  stack: windows
+  buildpacks:
+  - binary_buildpack
+  command: C:\Users\vcap\app\hwc.exe --appRootPath C:\Users\vcap\app\application

@@ -18,7 +18,7 @@ namespace HwcBootstrapper.ConfigTemplates
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Projects\dotnet-hwc\dotnet-hwc\ConfigTemplates\AspNetConfig.tt"
+    #line 1 "C:\workspace\code\dotnet-hwc\dotnet-hwc\ConfigTemplates\AspNetConfig.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class AspNetConfig : AspNetConfigBase
     {
